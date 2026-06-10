@@ -28,7 +28,7 @@
   "email": "geral@nunesaquaworks.pt",
   "address": { "@type": "PostalAddress", "addressLocality": "Portimão", "addressRegion": "Algarve", "addressCountry": "PT" },
   "openingHours": "Mo-Sa 09:00-18:00",
-  "areaServed": ["Portimão","Lagoa","Lagos","Silves","Monchique","Aljezur","Vila do Bispo","Albufeira","Loulé","Faro","São Brás de Alportel","Olhão","Tavira"]
+  "areaServed": ["Portimão","Lagoa","Lagos","Silves","Monchique","Aljezur","Vila do Bispo","Albufeira"]
 }
 </script>
 <style>
@@ -112,9 +112,6 @@
   .hero-card .ic { width: 38px; height: 38px; border-radius: 10px; background: var(--foam); display: grid; place-items: center; color: var(--aqua-deep); }
   .hero-card b { font-family: "Sora", sans-serif; font-size: 14px; color: var(--marine); display: block; line-height: 1.3; }
   .hero-card small { font-size: 12px; color: var(--muted); }
-
-  .wave { display: block; width: 100%; height: 52px; }
-  .no-waves .wave { display: none; }
 
   /* ---------- sections ---------- */
   section.sec { padding: 84px 0; }
@@ -240,19 +237,53 @@
     nav.main { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--marine-deep); flex-direction: column; gap: 0; padding: 10px 0; }
     nav.main.open { display: flex; }
     nav.main a { padding: 13px 28px; }
-    .menu-btn { display: block; }
+    .menu-btn { display: block; padding: 9px; }
+    .lang button { padding: 9px 13px; font-size: 12.5px; }
     .h-cta { display: none; }
     .hero-grid, .zona-grid, .sobre-grid, .contact-grid { grid-template-columns: 1fr; }
     .cards, .quotes { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
     .brands { grid-template-columns: repeat(3, 1fr); }
     .f-grid { grid-template-columns: 1fr; }
-    .hero { padding-top: 120px; }
     .hero-card { left: 10px; }
     .sobre-grid .sobre-media { order: -1; }
+
+    /* densidade mobile: cortar espaço vertical sem perder conteúdo */
+    section.sec { padding: 52px 0; }
+    .sec-head { margin-bottom: 26px; }
+    .hero { padding: 112px 0 0; }
+    .hero-grid { gap: 34px; padding-bottom: 44px; }
+    .hero .sub { font-size: 16.5px; }
+    .cards, .quotes, .steps { gap: 14px; }
+    .card { padding: 22px; }
+    .band-inner { padding: 44px 0; }
+    footer.site { padding: 46px 0 28px; }
+    .f-grid { gap: 30px; }
   }
   @media (max-width: 560px) {
+    .wrap { padding: 0 18px; }
+    header.site .hwrap { padding: 13px 18px; }
     .logo-h .wm { display: none; }
+    section.sec { padding: 44px 0; }
+    .sec-head { margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(30px, 8.5vw, 40px); }
+    .form-card { padding: 24px 20px; }
+
+    /* Serviços como lista compacta no telemóvel (em vez de 6 cartões) */
+    .cards { gap: 0; }
+    .card {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      grid-template-areas: "ic title" "ic desc";
+      column-gap: 14px; row-gap: 2px;
+      background: transparent; border: none; border-bottom: 1px solid var(--line);
+      border-radius: 0; box-shadow: none; padding: 15px 0;
+    }
+    .card:last-child { border-bottom: none; }
+    .card .ic { grid-area: ic; align-self: start; width: 40px; height: 40px; margin: 0; }
+    .card h3 { grid-area: title; font-size: 15.5px; }
+    .card p { grid-area: desc; font-size: 13.8px; }
+    .card a { display: none; }
   }
 </style>
 </head>
@@ -320,7 +351,6 @@
       </div>
     </div>
   </div>
-  <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path fill="#F3FAFC" d="M0 28 Q60 6 120 28 T240 28 T360 28 T480 28 T600 28 T720 28 T840 28 T960 28 T1080 28 T1200 28 T1320 28 T1440 28 L1440 56 L0 56 Z"></path></svg>
 </section>
 
 <!-- ===================== SERVIÇOS ===================== -->
@@ -443,8 +473,8 @@
     <div>
       <div class="sec-head" style="margin-bottom: 0;">
         <div class="kicker" data-en="Coverage area">Zona de atuação</div>
-        <h2 data-en="We serve the whole Algarve">Servimos todo o Algarve</h2>
-        <p data-en="Based in Portimão, we travel within a 100 km radius, from Cape St. Vincent to Tavira.">Estamos em Portimão e deslocamo-nos num raio de 100 km, do Cabo de São Vicente a Tavira.</p>
+        <h2 data-en="We cover the western Algarve">Cobrimos o barlavento algarvio</h2>
+        <p data-en="Based in Portimão, we cover the western Algarve, from Cape St. Vincent to Albufeira.">Estamos em Portimão e cobrimos o barlavento algarvio, do Cabo de São Vicente a Albufeira.</p>
       </div>
       <div class="chips">
         <span class="chip hq">Portimão ★</span>
@@ -455,11 +485,6 @@
         <span class="chip">Aljezur</span>
         <span class="chip">Vila do Bispo</span>
         <span class="chip">Albufeira</span>
-        <span class="chip">Loulé</span>
-        <span class="chip">Faro</span>
-        <span class="chip">São Brás de Alportel</span>
-        <span class="chip">Olhão</span>
-        <span class="chip">Tavira</span>
       </div>
       <p class="zona-note">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0095B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -558,7 +583,7 @@
       </details>
       <details>
         <summary data-en="Which areas do you cover?">Que zonas servem?</summary>
-        <div class="a" data-en="The whole Algarve within about 100 km of Portimão, from Sagres to Tavira.">Todo o Algarve num raio de cerca de 100 km de Portimão, de Sagres a Tavira.</div>
+        <div class="a" data-en="The western Algarve (Barlavento) within about 100 km of Portimão, from Sagres to Albufeira.">O barlavento algarvio num raio de cerca de 100 km de Portimão, de Sagres a Albufeira.</div>
       </details>
       <details>
         <summary data-en="Do you speak English?">Falam inglês?</summary>
