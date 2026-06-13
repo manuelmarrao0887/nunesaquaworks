@@ -28,18 +28,20 @@ O site foi preparado como site estático seguro:
 - O formulário não envia nem guarda dados — abre o WhatsApp com a mensagem
   pré-preenchida.
 
-> Nota: alguns controlos (ex.: `X-Frame-Options`, `Strict-Transport-Security`)
-> só podem ser definidos por cabeçalhos de servidor. O GitHub Pages serve sempre
-> por HTTPS, mas não permite cabeçalhos personalizados — para os adicionar, usar
-> um host com configuração de cabeçalhos (ex.: Cloudflare Pages / Netlify).
+- **Cabeçalhos de segurança** (via [`vercel.json`](vercel.json)): `Content-Security-Policy`,
+  `Strict-Transport-Security` (HSTS), `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`,
+  `Referrer-Policy` e `Permissions-Policy`. Definidos a nível de servidor pela Vercel.
 
-## Publicar (GitHub Pages)
+## Publicar (Vercel)
 
-1. `Settings → Pages`
-2. **Source:** `Deploy from a branch`
-3. **Branch:** `main` / `/ (root)` → `Save`
+O site está alojado na **Vercel** com domínio `www.nunesaquaworks.com` (apex
+`nunesaquaworks.com` redireciona para `www`). A Vercel publica automaticamente
+a cada `git push` para `main`. Os cabeçalhos de segurança são aplicados pelo
+[`vercel.json`](vercel.json).
 
-O site fica disponível em `https://manuelmarrao0887.github.io/nunesaquaworks/`.
+> O certificado é Let's Encrypt, renovado automaticamente pela Vercel. Logo após
+> ligar o domínio, o browser pode mostrar "Não seguro" durante alguns minutos
+> enquanto o DNS e o certificado propagam — depois disso fica com cadeado.
 
 ## Desenvolvimento local
 
