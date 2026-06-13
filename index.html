@@ -145,7 +145,8 @@
 
   /* marcas */
   .brands { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-  .brand-chip { aspect-ratio: 5/2; border-radius: 12px; border: 1px solid var(--line); display: grid; place-items: center; font-family: "Sora", sans-serif; font-weight: 600; font-size: 16px; letter-spacing: .3px; color: var(--marine); background: #fff; box-shadow: 0 2px 8px rgba(10,61,92,0.05); }
+  .brand-chip { aspect-ratio: 5/2; border-radius: 12px; border: 1px solid var(--line); display: grid; place-items: center; padding: 16px 20px; background: #fff; box-shadow: 0 2px 8px rgba(10,61,92,0.05); }
+  .brand-chip img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
   .brands-note { margin-top: 16px; font-size: 13px; color: var(--muted); font-style: italic; }
 
   /* zona */
@@ -449,12 +450,12 @@
       <h2 data-en="The brands we install">As marcas que instalamos</h2>
     </div>
     <div class="brands">
-      <div class="brand-chip">Aquark</div>
-      <div class="brand-chip">AbriBlue</div>
-      <div class="brand-chip">Wellis</div>
-      <div class="brand-chip">Fairland</div>
-      <div class="brand-chip">Pentair</div>
-      <div class="brand-chip">AstralPool</div>
+      <div class="brand-chip"><img src="brand/marcas/aquark.png" alt="Aquark" loading="lazy"></div>
+      <div class="brand-chip"><img src="brand/marcas/abriblue.svg" alt="AbriBlue" loading="lazy"></div>
+      <div class="brand-chip"><img src="brand/marcas/wellis.png" alt="Wellis" loading="lazy"></div>
+      <div class="brand-chip"><img src="brand/marcas/fairland.png" alt="Fairland" loading="lazy"></div>
+      <div class="brand-chip"><img src="brand/marcas/pentair.png" alt="Pentair" loading="lazy"></div>
+      <div class="brand-chip"><img src="brand/marcas/astralpool.png" alt="AstralPool" loading="lazy"></div>
     </div>
     <p class="brands-note" data-en="We work with leading brands in the sector, chosen for their reliability and efficiency.">Trabalhamos com marcas de referência no setor, escolhidas pela fiabilidade e eficiência.</p>
   </div>
