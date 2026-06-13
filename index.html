@@ -131,7 +131,7 @@
 
   /* mid band */
   .band { background: var(--marine); color: #fff; }
-  .band-inner { padding: 64px 0; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .band-inner { padding-top: 64px; padding-bottom: 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
   .band h2 { color: #fff; font-size: clamp(24px, 3vw, 32px); }
   .band p { color: rgba(255,255,255,0.78); margin-top: 8px; max-width: 52ch; }
   .band-ctas { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
@@ -259,7 +259,7 @@
     .hero .sub { font-size: 16.5px; }
     .cards, .quotes, .steps { gap: 14px; }
     .card { padding: 22px; }
-    .band-inner { padding: 44px 0; }
+    .band-inner { padding-top: 44px; padding-bottom: 44px; }
     footer.site { padding: 46px 0 28px; }
     .f-grid { gap: 30px; }
   }
@@ -277,9 +277,8 @@
     .brand-tile { padding: 18px 14px; min-height: 78px; }
     .brand-tile img { height: 30px; }
 
-    /* Faixa CTA como cartão arredondado destacado (separação clara das secções) */
-    .band { margin: 34px 16px; border-radius: 20px; }
-    .band-inner { padding: 40px 0; }
+    /* Faixa CTA full-bleed com mais espaço interno (parte azul mais "respirada") */
+    .band-inner { padding-top: 64px; padding-bottom: 64px; }
 
     /* Serviços como lista compacta no telemóvel (em vez de 6 cartões) */
     .cards { gap: 0; }
