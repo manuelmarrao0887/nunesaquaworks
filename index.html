@@ -144,10 +144,11 @@
   .step p { font-size: 14px; color: var(--muted); }
 
   /* marcas */
-  .brands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 28px; align-items: center; justify-items: center; }
-  .brands img { height: 44px; width: auto; min-width: 0; max-width: 100%; object-fit: contain; opacity: .82; transition: opacity .2s ease, transform .2s ease; }
-  .brands img:hover { opacity: 1; transform: translateY(-2px); }
-  .brands-note { margin-top: 32px; font-size: 13px; color: var(--muted); font-style: italic; text-align: center; }
+  .brands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .brand-tile { background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 2px 10px rgba(10,61,92,0.05); display: grid; place-items: center; padding: 26px 22px; min-height: 104px; transition: box-shadow .2s ease, transform .2s ease; }
+  .brand-tile:hover { box-shadow: 0 10px 24px rgba(10,61,92,0.12); transform: translateY(-3px); }
+  .brand-tile img { height: 42px; width: auto; min-width: 0; max-width: 100%; object-fit: contain; }
+  .brands-note { margin-top: 28px; font-size: 13px; color: var(--muted); font-style: italic; text-align: center; }
 
   /* zona */
   .zona-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
@@ -243,8 +244,9 @@
     .hero-grid, .zona-grid, .sobre-grid, .contact-grid { grid-template-columns: 1fr; }
     .cards, .quotes { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
-    .brands { gap: 34px 22px; }
-    .brands img { height: 34px; }
+    .brands { gap: 16px; }
+    .brand-tile { padding: 20px 16px; min-height: 88px; }
+    .brand-tile img { height: 34px; }
     .f-grid { grid-template-columns: 1fr; }
     .hero-card { left: 10px; }
     .sobre-grid .sobre-media { order: -1; }
@@ -269,8 +271,9 @@
     .sec-head { margin-bottom: 22px; }
     .hero h1 { font-size: clamp(30px, 8.5vw, 40px); }
     .form-card { padding: 24px 20px; }
-    .brands { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 18px; }
-    .brands img { height: 28px; }
+    .brands { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .brand-tile { padding: 18px 14px; min-height: 78px; }
+    .brand-tile img { height: 30px; }
 
     /* Margem para a faixa CTA não ficar colada às secções vizinhas */
     .band { margin: 22px 0; }
@@ -453,12 +456,12 @@
       <h2 data-en="The brands we install">As marcas que instalamos</h2>
     </div>
     <div class="brands">
-      <img src="brand/marcas/aquark.png" alt="Aquark" loading="lazy">
-      <img src="brand/marcas/abriblue.svg" alt="AbriBlue" loading="lazy">
-      <img src="brand/marcas/wellis.png" alt="Wellis" loading="lazy">
-      <img src="brand/marcas/fairland.png" alt="Fairland" loading="lazy">
-      <img src="brand/marcas/pentair.png" alt="Pentair" loading="lazy">
-      <img src="brand/marcas/astralpool.png" alt="AstralPool" loading="lazy">
+      <div class="brand-tile"><img src="brand/marcas/aquark.png" alt="Aquark" loading="lazy"></div>
+      <div class="brand-tile"><img src="brand/marcas/abriblue.svg" alt="AbriBlue" loading="lazy"></div>
+      <div class="brand-tile"><img src="brand/marcas/wellis.png" alt="Wellis" loading="lazy"></div>
+      <div class="brand-tile"><img src="brand/marcas/fairland.png" alt="Fairland" loading="lazy"></div>
+      <div class="brand-tile"><img src="brand/marcas/pentair.png" alt="Pentair" loading="lazy"></div>
+      <div class="brand-tile"><img src="brand/marcas/astralpool.png" alt="AstralPool" loading="lazy"></div>
     </div>
     <p class="brands-note" data-en="We work with leading brands in the sector, chosen for their reliability and efficiency.">Trabalhamos com marcas de referência no setor, escolhidas pela fiabilidade e eficiência.</p>
   </div>
