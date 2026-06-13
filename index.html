@@ -108,8 +108,8 @@
   .img-frame .ph { display: none; position: absolute; inset: 0; place-items: center; font-family: ui-monospace, monospace; font-size: 13px; color: rgba(255,255,255,0.75);
     background: repeating-linear-gradient(45deg, #0E4A6E 0 14px, #0D4365 14px 28px); text-align: center; padding: 20px; }
   .img-frame.img-missing .ph { display: grid; }
-  .hero-card { position: absolute; left: -22px; bottom: 26px; background: #fff; border-radius: 14px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 30px rgba(3,20,32,0.35); }
-  .hero-card .ic { width: 38px; height: 38px; border-radius: 10px; background: var(--foam); display: grid; place-items: center; color: var(--aqua-deep); }
+  .hero-card { position: absolute; left: -22px; bottom: 26px; max-width: 300px; background: #fff; border-radius: 14px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 30px rgba(3,20,32,0.35); }
+  .hero-card .ic { width: 38px; height: 38px; border-radius: 10px; background: var(--foam); display: grid; place-items: center; color: var(--aqua-deep); flex: none; }
   .hero-card b { font-family: "Sora", sans-serif; font-size: 14px; color: var(--marine); display: block; line-height: 1.3; }
   .hero-card small { font-size: 12px; color: var(--muted); }
 
@@ -144,10 +144,10 @@
   .step p { font-size: 14px; color: var(--muted); }
 
   /* marcas */
-  .brands { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-  .brand-chip { aspect-ratio: 5/2; border-radius: 12px; border: 1px solid var(--line); display: grid; place-items: center; padding: 16px 20px; background: #fff; box-shadow: 0 2px 8px rgba(10,61,92,0.05); }
-  .brand-chip img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
-  .brands-note { margin-top: 16px; font-size: 13px; color: var(--muted); font-style: italic; }
+  .brands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 28px; align-items: center; justify-items: center; }
+  .brands img { height: 44px; width: auto; min-width: 0; max-width: 100%; object-fit: contain; opacity: .82; transition: opacity .2s ease, transform .2s ease; }
+  .brands img:hover { opacity: 1; transform: translateY(-2px); }
+  .brands-note { margin-top: 32px; font-size: 13px; color: var(--muted); font-style: italic; text-align: center; }
 
   /* zona */
   .zona-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
@@ -243,7 +243,8 @@
     .hero-grid, .zona-grid, .sobre-grid, .contact-grid { grid-template-columns: 1fr; }
     .cards, .quotes { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
-    .brands { grid-template-columns: repeat(3, 1fr); }
+    .brands { gap: 34px 22px; }
+    .brands img { height: 34px; }
     .f-grid { grid-template-columns: 1fr; }
     .hero-card { left: 10px; }
     .sobre-grid .sobre-media { order: -1; }
@@ -268,6 +269,8 @@
     .sec-head { margin-bottom: 22px; }
     .hero h1 { font-size: clamp(30px, 8.5vw, 40px); }
     .form-card { padding: 24px 20px; }
+    .brands { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 18px; }
+    .brands img { height: 28px; }
 
     /* Margem para a faixa CTA não ficar colada às secções vizinhas */
     .band { margin: 22px 0; }
@@ -450,12 +453,12 @@
       <h2 data-en="The brands we install">As marcas que instalamos</h2>
     </div>
     <div class="brands">
-      <div class="brand-chip"><img src="brand/marcas/aquark.png" alt="Aquark" loading="lazy"></div>
-      <div class="brand-chip"><img src="brand/marcas/abriblue.svg" alt="AbriBlue" loading="lazy"></div>
-      <div class="brand-chip"><img src="brand/marcas/wellis.png" alt="Wellis" loading="lazy"></div>
-      <div class="brand-chip"><img src="brand/marcas/fairland.png" alt="Fairland" loading="lazy"></div>
-      <div class="brand-chip"><img src="brand/marcas/pentair.png" alt="Pentair" loading="lazy"></div>
-      <div class="brand-chip"><img src="brand/marcas/astralpool.png" alt="AstralPool" loading="lazy"></div>
+      <img src="brand/marcas/aquark.png" alt="Aquark" loading="lazy">
+      <img src="brand/marcas/abriblue.svg" alt="AbriBlue" loading="lazy">
+      <img src="brand/marcas/wellis.png" alt="Wellis" loading="lazy">
+      <img src="brand/marcas/fairland.png" alt="Fairland" loading="lazy">
+      <img src="brand/marcas/pentair.png" alt="Pentair" loading="lazy">
+      <img src="brand/marcas/astralpool.png" alt="AstralPool" loading="lazy">
     </div>
     <p class="brands-note" data-en="We work with leading brands in the sector, chosen for their reliability and efficiency.">Trabalhamos com marcas de referência no setor, escolhidas pela fiabilidade e eficiência.</p>
   </div>
